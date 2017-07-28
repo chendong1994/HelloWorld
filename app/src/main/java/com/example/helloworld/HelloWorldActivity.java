@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.R;
+
 
 /**
  * Created by chendong on 2017/7/20.
@@ -36,6 +38,7 @@ public class HelloWorldActivity extends AppCompatActivity {
                 startActivityForResult(intent,1);
             }
         });
+
 //        Intent intent2 = getIntent();
 //        String data2 = intent2.getStringExtra("data_se");
 //        Log.d("接受到的传递数据",data2);
@@ -55,6 +58,7 @@ public class HelloWorldActivity extends AppCompatActivity {
          }
 
     }
+
 
     //重写菜单实现方法
     @Override
