@@ -1,5 +1,6 @@
 package com.example.helloworld;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -35,6 +36,8 @@ public class FruitActivity extends AppCompatActivity {
             public  void  onItemClick(AdapterView<?> parent, View view, int position, long id){
                 Fruit fruit =fruitList.get(position);
                 Toast.makeText(FruitActivity.this,fruit.getNamae() , Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(FruitActivity.this, FragmentActivity.class);//跳转页面，显示intent
+                startActivity(intent);
             }
         });
 

@@ -36,7 +36,7 @@ public class SecondActivity  extends AppCompatActivity {
             @Override
             public  void onClick(View v){
                 Intent intent = new Intent(SecondActivity.this, FruitActivity.class);//跳转页面，显示intent
-               startActivity(intent);
+                startActivity(intent);
             }
         });
 
