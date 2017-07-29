@@ -2,7 +2,10 @@ package com.example.helloworld;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.domain.Fruit;
 import com.example.domain.FruitAdapter;
@@ -17,21 +20,23 @@ import com.example.R;
 
 public class FruitActivity extends AppCompatActivity {
 
-    //private  String[] data = { "apple","banana","orange","watermelon","pear","grape","mhfj","dasd","1554","d4sd5","dsad","5254sd","dsda"};
-
     private List<Fruit> fruitList = new ArrayList<>();
 
     @Override
     protected  void  onCreate(Bundle save){
         super.onCreate(save);
         setContentView(R.layout.fruits_layout);
-//        ArrayAdapter<String> adpter = new ArrayAdapter<String>(FruitActivity.this , android.R.layout.simple_list_item_1,data);
-//        ListView listView = (ListView) findViewById(R.id.list_view);
-//        listView.setAdapter(adpter);
         initFruits(); //初始化水果数据
         FruitAdapter adapter = new FruitAdapter(FruitActivity.this,R.layout.fruit_item,fruitList);
         ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public  void  onItemClick(AdapterView<?> parent, View view, int position, long id){
+                Fruit fruit =fruitList.get(position);
+                Toast.makeText(FruitActivity.this,fruit.getNamae() , Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
