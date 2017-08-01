@@ -40,6 +40,17 @@ public class SecondActivity  extends AppCompatActivity {
             }
         });
 
+        Button button = (Button) findViewById(R.id.button);
+        //设置鉴定器，监听事件的触发
+        button.setOnClickListener(new View.OnClickListener(){
+            //重写触发的方法
+            @Override
+            public  void onClick(View v){
+                Intent intent = new Intent(SecondActivity.this, UserCenterActivity.class);//跳转页面，显示intent
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
