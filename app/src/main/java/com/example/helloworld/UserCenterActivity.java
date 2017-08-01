@@ -17,7 +17,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
- * Created by admin on 2017/7/31.
+ * Created by chendong on 2017/7/31.
  */
 
 public class UserCenterActivity  extends AppCompatActivity {
@@ -31,7 +31,6 @@ public class UserCenterActivity  extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.textView) ;
         sendRequest();//调用方法
     }
-
 
     private  void  sendRequest(){
         new Thread(new Runnable() {
@@ -61,13 +60,10 @@ public class UserCenterActivity  extends AppCompatActivity {
 
     }
 
-
     private  void  showResponse(final  GetUserDetailsResp re){
-
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-
                 Log.d("后台返回数据----",re.getName());
                 textView.setText(re.getName());
             }
